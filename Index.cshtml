@@ -1,0 +1,30 @@
+﻿@*<div data-ng-class="app.account.userId >= 0? 'wrapper': ''">
+    <div admin-menu-dirtv data-ng-show="app.account.userId >= 0"></div>
+    <div data-ng-class="app.account.userId >= 0? 'page-wrapper': ''">
+        <div class="row" data-ng-if="app.account.userId >= 0">
+            <div admin-notification-dirtv></div>
+        </div>
+        <div data-ng-class="app.account.userId >= 0? 'row': ''">
+            <div data-ng-class="homeContent == 'HomePage'? '': 'container'">
+                <div data-ng-view></div>
+            </div>
+        </div>
+        <div data-loading-widget></div>
+    </div>
+</div>*@
+
+<div data-ng-class="app.account.userId >= 0 && app.account.role!='User'? 'wrapper': ''">
+    <div admin-menu-dirtv data-ng-show="app.account.userId >= 0 && app.account.role!='User'" class="adminheader"></div>
+    <div data-ng-class="app.account.userId >=0 && app.account.role!='User'? 'page-wrapper': ''">
+        <div class="row" data-ng-if="app.account.userId >= 0 && app.account.role!='User'">
+            <div admin-notification-dirtv></div>
+        </div>
+        <div data-ng-class="app.account.userId >= 0 && app.account.role!='User'? 'row': ''">
+            <div data-ng-class="homeContent == 'HomePage'? '': ''">
+                <div data-ng-view></div>
+            </div>
+        </div>
+        <div data-loading-widget></div>
+        <div admin-footer-dirtv></div>
+    </div>
+</div>
